@@ -78,8 +78,8 @@ def put_state(state_id):
     ignore = ['id', 'created_at', 'updated_at']
 
     data = request.get_json()
-    for key, value in data.items():
-        if key not in ignore:
-            setattr(state, key, value)
+    for k, v in data.items():
+        if k not in ignore:
+            setattr(state, k, v)
     storage.save()
     return make_response(jsonify(state.to_dict()), 200)
