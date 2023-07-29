@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-'''Contains a Flask web application API.
-'''
+"""It’s time to start your API!"""
 import os
 from flask import Flask, jsonify
 from flask_cors import CORS
-
 from models import storage
 from api.v1.views import app_views
 
