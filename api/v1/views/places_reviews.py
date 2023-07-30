@@ -32,7 +32,7 @@ def single_review(review_id):
 @app_views.route('/reviews/<review_id>',
                  methods=['DELETE'], strict_slashes=False)
 def del_review(review_id):
-    '''Deletes a Review object.''''
+    '''Deletes a Review object.'''
     obj = storage.get(Review, review_id)
     if not obj:
         abort(404)
