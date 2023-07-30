@@ -80,9 +80,9 @@ def put_review(review_id):
     if not req:
         abort(400, "Not a JSON")
 
-    for key, value in req.items():
-        if key not in ['id', 'user_id', 'place_id', 'created_at', 'updated_at']:
-            setattr(obj, key, value)
+    for k, value in req.items():
+        if k not in ['id', 'user_id', 'place_id', 'created_at', 'updated_at']:
+            setattr(obj, k, value)
 
     storage.save()
     return make_response(jsonify(obj.to_dict()), 200)
